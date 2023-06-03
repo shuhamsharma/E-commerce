@@ -1,0 +1,37 @@
+.h5{
+    color: rgb(241, 104, 104);
+    font-weight: bolder;
+}
+.order_block{
+    border: 1px solid red;
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 30px;
+    width: 30vw;
+    cursor: pointer;
+}
+#parent{
+    margin-top: 15vh;
+    height: 100vh;
+    overflow: scroll;
+}
+.span{
+    font-weight: lighter !important; 
+    color: black;
+}
+#full_details{
+    position: fixed;
+    top:20vh;
+    left:30vh;
+    background: white;
+    border:red 2px solid;
+    padding: 5px;
+}
+.image{
+    height: 10vh;
+    width: 8vw;
+}
+.main_box{
+    display: grid;
+    grid-template-columns: auto 2fr;
+}

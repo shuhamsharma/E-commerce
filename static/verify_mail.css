@@ -1,0 +1,43 @@
+.header{
+    background-color: white;
+      border:1px solid black;
+      width:20rem;
+      height: 20rem;
+      margin: auto;
+      margin-top: 19vh;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 2px 2px 2px 2px grey;
+      text-align: center;}
+      .box
+      {
+        
+    margin: 2rem 0;
+      }
+.submit{
+    background: #537FE7;
+    width:8rem;
+    margin:auto;
+    padding: 10px 15px;
+    border: 0;
+    outline: 0;
+    border-radius: 7px;
+    color:white;
+    font-size: large;
+    cursor: pointer;
+    margin:1rem 0;
+}
+.submit:hover{
+  background: white;
+  color: #537FE7;
+  border: 1px solid #537FE7;
+}
+body{
+    
+    background: url("https://img.freepik.com/premium-photo/yellow-envelope-gray-background-top-view-copy-space_93675-99786.jpg");
+    background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

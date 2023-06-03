@@ -1,0 +1,21 @@
+.box{
+    border: red 3px solid ;
+    padding: 20px;
+font-weight: bold;
+    border-radius: 20px;
+    
+    box-shadow: rgba(255, 158, 158, 0.35) 0px 5px 15px;
+}
+.span{
+    font-weight: lighter !important;
+    
+}
+.box>button{
+    color: white;
+    background: black;
+    font-weight: lighter;
+    height: 5vh;
+    width: 4vw;
+    border-radius: 5px;
+    cursor: pointer;
+}

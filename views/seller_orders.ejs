@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="seller_orders.css">
+</head>
+<body style="margin: 0;">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark topp" style="position: fixed;  width:100%; top:0; z-index: 1; background-color: #8B0000 !important;" id="nav">
+    <div class="container-fluid" style="display: flex; justify-content: space-between; align-items: center;">
+        <a class="navbar-brand" href="/admin" style="font-size: xx-large; margin-left: 20px; color: white; ">Hammer</a>
+            <form class="d-flex" role="search">
+                <ul class="navbar-nav me-auto  mb-lg-0">
+                    <div class="dropdown">
+                        <button class="dropbtn">Manage Account</button>
+                        <div class="dropdown-content" class="drop">
+                          <a href="/admin">Your Products</a>
+                          <a href="/seller_orders">Orders Recieved</a>
+                          <a href="/logout">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                </ul>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div id="parent">
+<% for(let i=0;i<orders.length;i++){ %>
+    <div class="box">
+        <p class="p">Order No: <%=i+1 %></p>
+        <hr>
+        <h3>Buyers Name: <span class="span"><%=orders[i].buyer_name %></span></h3>
+        <h4>Product Ordered: <span class="span"><%=orders[i].product_name %></span></h4>
+        <p class="p">Order Date: <span class="span"><%= JSON.stringify(orders[i].date).substring(1,11) %></span></p>
+        <p>Deliever To: <span class="span"><%= orders[i].address %></span></p>
+        <p class="p">Quantity Ordered: <span class="span"><%= orders[i].quantity %></p>
+        <p>Status: <span class="span" id=<%= orders[i].order_id %>stval><%=JSON.parse(orders[i].status)[JSON.parse(orders[i].status).length-1] %></span></p>
+        <input type="text" style="display: none;" id=<%= orders[i].order_id %>status>
+        <button  onclick="change_status(<%= orders[i].order_id %>,event)" id=<%= orders[i].order_id %>bt >Edit Status</button>
+        <button style="display: none;"  onclick="save_status(<%= orders[i].order_id %>,event)" id=<%= orders[i].order_id %>st>Save Status</button>
+    </div>
+    <% } %>
+</div>
+<script src="seller_orders.js"></script>
+</body>
+</html>

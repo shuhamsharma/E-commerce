@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="orders.css" type="text/css">
+</head>
+<body>
+    <%- include('partials/header',{is_log:true,username:username}) %>
+    <div id="parent">
+    <% for(let i=0;i<orders.length;i++){ %>
+        <div class="order_block" onclick="fulldetails(<%= JSON.stringify(orders[i].date) %>)">
+            <h6>Order No: <span><%= i+1 %></span></h6>
+            <h5 class="h5">Total Products Ordered: <span class="span"><%= orders[i].total %></span></h5>
+            <h5 class="h5">Address: <span class="span"><%= orders[i].address %></span></h5>
+            <h5 class="h5">ordered on: <span class="span"><%= JSON.stringify(orders[i].date).substring(1,11)%></span></h5>
+        </div>
+        <% } %>
+    </div>
+
+    <div id="full_details" style="display: none;"></div>
+
+    <script src="orders.js"></script>
+</body>
+</html>
